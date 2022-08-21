@@ -3,8 +3,12 @@ from re import template
 from django.http import HttpResponse
 import datetime
 from django.template import Context, Template
-import django
 import socket
+from django.template import loader
+
+nom = "carlos"
+ape = "Basq"
+datos = {"nombre": nom, "apellido": ape, "fecha": datetime.datetime.now()}
 
 
 def saludo(request):
@@ -31,10 +35,8 @@ def ano_nacimiento(request, edad):
 
 
 def probando_html(request):
-    mihtml = open(
-        "C:/Users/lucas/OneDrive/Documentos/CoderHouse-Python/CHPythonLLM/plantillas/template1.html")
-    plantilla = Template(mihtml.read())
-    mihtml.close()
+
+    plantilla = loader.get_template('template1.html')
     contexto = Context()
-    documnto = plantilla.render(contexto)
+    documnto = plantilla.render(datos)
     return HttpResponse(documnto)

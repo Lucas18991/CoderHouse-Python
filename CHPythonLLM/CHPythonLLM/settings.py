@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "AppCacyc",
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'CHPythonLLM.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:\Users\lucas\OneDrive\Documentos\CoderHouse-Python\CHPythonLLM\plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
