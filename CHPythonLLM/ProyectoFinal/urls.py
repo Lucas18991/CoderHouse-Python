@@ -1,4 +1,4 @@
-"""CHPythonLLM URL Configuration
+"""ProyectoFinal URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,19 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from CHPythonLLM.views import probando_html, ano_nacimiento, saludo, segunda_vista, dia_de_hoy, saludo_con_nombre
 from django.urls import path, include
+
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('saludo/', saludo, name='saludar'),
-    path('segunda_vista/', segunda_vista, name='Segunda_vista'),
-    path('dia_de_hoy/', dia_de_hoy, name='dia_de_hoy'),
-    path('saludo_con_nombre/<nombre>',
-         saludo_con_nombre, name='saludo_con_nombre'),
-    path('ano_nacimiento/<edad>',
-         ano_nacimiento, name='ano_nacimiento'),
-    path('probando_html/',
-         probando_html, name='probando_html'),
-    path('AppCentroArg/', include('AppCentroArg.urls')),
+    path("admin/", admin.site.urls),
+    path("AppCoder/", include("AppCoder.urls")),
 ]
